@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { formatPeso } from "@/lib/catalog";
+import { formatPeso } from "@/lib/format";
 import { useOrderStore } from "@/components/OrderStore";
 
 export default function OrderListPage() {
