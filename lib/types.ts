@@ -4,10 +4,11 @@ export type Product = {
   code: string;
   area: Area;
   category: string;
-  price: number; // Final website price, inclusive of service charge.
+  price: number; // Website final price including service charge.
   image?: string;
   size?: string;
   createdAt: string;
+  status?: string;
 };
 
 export type WebGroup = {
