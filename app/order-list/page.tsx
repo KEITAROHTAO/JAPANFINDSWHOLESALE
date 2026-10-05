@@ -7,7 +7,7 @@ import { useOrderStore } from "@/components/OrderStore";
 export default function OrderListPage() {
   const { items, remove, setNote, clear } = useOrderStore();
   const [copied, setCopied] = useState(false);
-  const messenger = process.env.NEXT_PUBLIC_MESSENGER_URL || "#";
+  const messenger = process.env.NEXT_PUBLIC_MESSENGER_URL || "https://m.me/61576532876437";
   const total = items.reduce((sum, item) => sum + item.price, 0);
 
   const message = useMemo(() => {
