@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Product } from "@/lib/types";
-import { formatPeso } from "@/lib/catalog";
+import { formatPeso } from "@/lib/format";
 import { useOrderStore } from "./OrderStore";
 
 export default function ProductCard({ product }: { product: Product }) {
