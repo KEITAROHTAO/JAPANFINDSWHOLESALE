@@ -87,7 +87,7 @@ function isWebVisible(product: Product, now = new Date()) {
 }
 
 export async function getVisibleProducts(now = new Date()): Promise<Product[]> {
-  const apiUrl = process.env.PRODUCTS_API_URL;
+  const apiUrl = process.env.PRODUCTS_API_URL || "https://script.google.com/macros/s/AKfycbyR90DV060E8E9iLiHzwKSFCJpO1ZsXa_UWzGjzxIMSStSKZx1DSN2rWw9Cb9hJxt-gMg/exec";
   if (!apiUrl) return fallbackProducts.filter((p) => isWebVisible(p, now));
 
   try {
