@@ -15,7 +15,8 @@ a { color: inherit; text-decoration: none; }
 button, textarea { font: inherit; }
 .siteHeader { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
 .headerInner { height: 76px; max-width: var(--max); margin: 0 auto; padding: 0 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-.logoLink img { width: 150px; height: auto; display: block; }
+.logoLink { display: flex; align-items: center; height: 100%; }
+.logoLink img { display: block; width: 190px; max-height: 62px; height: auto; object-fit: contain; object-position: left center; }
 .headerActions { display: flex; align-items: center; gap: 16px; }
 .textAction { color: var(--blue-dark); font-weight: 700; }
 .orderBadge { font-size: 14px; font-weight: 700; }
@@ -24,7 +25,7 @@ button, textarea { font: inherit; }
 .menuPanel a { padding: 14px 12px; border-bottom: 1px solid var(--line); }
 .menuPanel a:last-child { border-bottom: 0; }
 .hero { position: relative; height: min(68vh, 650px); min-height: 420px; overflow: hidden; }
-.heroImage { object-fit: cover; object-position: center 45%; }
+.heroImage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block; }
 .heroShade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.50), rgba(0,0,0,.08)); }
 .heroText { position: absolute; left: max(24px, calc((100vw - var(--max))/2)); bottom: 56px; color: white; }
 .heroText span { font-size: clamp(20px, 3vw, 34px); font-weight: 700; }
@@ -42,7 +43,8 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
 .horizontalProducts { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(190px, 1fr); grid-template-columns: repeat(5, minmax(190px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 8px; }
 .productGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .productCard { min-width: 0; }
-.productImageLink { display: block; }
+.productImageLink { display: block; overflow: hidden; background: var(--soft); }
+.productImage { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: var(--soft); }
 .productImagePlaceholder { aspect-ratio: 4/3; background: linear-gradient(145deg, #f5f8fa, #e5edf2); border: 1px solid var(--line); display: grid; place-items: center; color: #7b8991; text-align: center; padding: 18px; }
 .productImagePlaceholder span { font-weight: 700; }
 .productMeta { padding: 10px 1px 8px; display: flex; flex-direction: column; gap: 3px; }
@@ -61,7 +63,7 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
 .subChips { padding-top: 10px; border-top: 1px solid var(--line); }
 .itemCount { color: var(--muted); margin: 24px 0 14px; }
 .productDetail { display: grid; grid-template-columns: 1.15fr .85fr; gap: 52px; }
-.detailImage { aspect-ratio: 4/3; }
+.detailImage { aspect-ratio: 4/3; width: 100%; object-fit: cover; }
 .detailInfo { align-self: start; }
 .detailPrice { font-size: 36px; font-weight: 800; margin: 4px 0 24px; }
 .detailList { margin: 0 0 24px; border-top: 1px solid var(--line); }
@@ -73,7 +75,7 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
 .orderPage { max-width: 900px; }
 .orderItems { border-top: 1px solid var(--line); }
 .orderItem { display: grid; grid-template-columns: 180px 1fr; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-.orderThumb { aspect-ratio: 4/3; }
+.orderThumb { aspect-ratio: 4/3; width: 100%; object-fit: cover; }
 .orderTopLine { display: flex; justify-content: space-between; gap: 20px; }
 .orderTopLine div { display: flex; flex-direction: column; gap: 4px; }
 .orderTopLine span { color: var(--muted); font-size: 13px; }
@@ -87,7 +89,7 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
 .emptyState p, .placeholderPage p { color: var(--muted); }
 @media (max-width: 860px) {
   .headerInner { height: 68px; padding: 0 14px; }
-  .logoLink img { width: 122px; }
+  .logoLink img { width: 145px; max-height: 52px; }
   .orderBadge { display: none; }
   .textAction { font-size: 14px; }
   .hero { height: 52vh; min-height: 390px; }
