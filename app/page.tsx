@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <main>
       <section className="hero">
-        <img src="/api/image?asset=warehouse" alt="JAPAN FINDS WHOLESALE warehouse" className="heroImage" />
+        <img src="/images/warehouse.jpg" alt="JAPAN FINDS WHOLESALE warehouse" className="heroImage" />
         <div className="heroShade" />
         <div className="heroText"><span>Direct Supply of</span><h1>JAPAN<br />SURPLUS</h1></div>
       </section>
