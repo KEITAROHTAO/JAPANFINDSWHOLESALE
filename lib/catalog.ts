@@ -7,46 +7,104 @@ export const WEB_GROUPS: WebGroup[] = [
   { slug: "wholesale-display-items", label: "Wholesale Display Items", areas: ["A"] },
 ];
 
-// Replace this adapter with Products Data sync in the next phase.
-export const products: Product[] = [
+export const WEBSITE_PUBLISH_DELAY_DAYS = 3;
+export const SERVICE_CHARGE_RATE = 0.05;
+
+type ApiProduct = {
+  code?: string;
+  area?: string;
+  category?: string;
+  price?: number | string;
+  width?: number | string;
+  length?: number | string;
+  height?: number | string;
+  status?: string;
+  createdAt?: string;
+  photoUrl?: string;
+  image?: string;
+};
+
+const fallbackProducts: Product[] = [
   { code: "B10-101", area: "B", category: "Stroller", price: 840, createdAt: "2026-09-25T09:00:00+08:00" },
-  { code: "B10-102", area: "B", category: "Baby Chair", price: 525, createdAt: "2026-09-25T09:00:00+08:00" },
-  { code: "B10-103", area: "B", category: "Baby Bed", price: 1260, createdAt: "2026-09-24T09:00:00+08:00" },
-  { code: "B10-104", area: "B", category: "Baby Carrier", price: 105, createdAt: "2026-09-24T09:00:00+08:00" },
-  { code: "B10-105", area: "B", category: "Toy", price: 315, createdAt: "2026-09-23T09:00:00+08:00" },
-  { code: "B10-106", area: "B", category: "Stroller", price: 945, createdAt: "2026-09-20T09:00:00+08:00" },
-
   { code: "C10-123", area: "C", category: "Table", price: 1575, size: "W120 × D60 × H72 cm", createdAt: "2026-09-22T09:00:00+08:00" },
-  { code: "C10-145", area: "C", category: "Chair", price: 2100, size: "W65 × D70 × H84 cm", createdAt: "2026-09-22T09:00:00+08:00" },
-  { code: "C10-166", area: "C", category: "Sofa", price: 4725, size: "W180 × D80 × H86 cm", createdAt: "2026-09-21T09:00:00+08:00" },
   { code: "D10-202", area: "D", category: "Cabinet", price: 3150, size: "W90 × D45 × H180 cm", createdAt: "2026-09-21T09:00:00+08:00" },
-  { code: "D10-216", area: "D", category: "Shelf", price: 1890, size: "W80 × D35 × H160 cm", createdAt: "2026-09-20T09:00:00+08:00" },
-  { code: "C10-181", area: "C", category: "Table", price: 2310, size: "W140 × D80 × H75 cm", createdAt: "2026-09-19T09:00:00+08:00" },
-
   { code: "E10-301", area: "E", category: "Kitchen", price: 105, createdAt: "2026-09-22T09:00:00+08:00" },
-  { code: "E10-302", area: "E", category: "Tableware", price: 53, createdAt: "2026-09-22T09:00:00+08:00" },
-  { code: "E10-303", area: "E", category: "Toy", price: 158, createdAt: "2026-09-21T09:00:00+08:00" },
-  { code: "E10-304", area: "E", category: "Bag", price: 210, createdAt: "2026-09-21T09:00:00+08:00" },
-  { code: "E10-305", area: "E", category: "Decor", price: 105, createdAt: "2026-09-20T09:00:00+08:00" },
-  { code: "E10-306", area: "E", category: "Kitchen", price: 263, createdAt: "2026-09-19T09:00:00+08:00" },
-
   { code: "A10-401", area: "A", category: "Display Item", price: 1050, createdAt: "2026-09-22T09:00:00+08:00" },
-  { code: "A10-402", area: "A", category: "Display Item", price: 1575, createdAt: "2026-09-22T09:00:00+08:00" },
-  { code: "A10-403", area: "A", category: "Premium Item", price: 2625, createdAt: "2026-09-21T09:00:00+08:00" },
-  { code: "A10-404", area: "A", category: "Display Item", price: 840, createdAt: "2026-09-20T09:00:00+08:00" },
-  { code: "A10-405", area: "A", category: "Premium Item", price: 3675, createdAt: "2026-09-20T09:00:00+08:00" },
-  { code: "A10-406", area: "A", category: "Display Item", price: 735, createdAt: "2026-09-18T09:00:00+08:00" },
 ];
 
-export const WEBSITE_PUBLISH_DELAY_DAYS = 3;
+function parseNumber(value: number | string | undefined) {
+  if (typeof value === "number") return value;
+  if (!value) return 0;
+  return Number(String(value).replace(/,/g, "").trim()) || 0;
+}
 
-export function isWebVisible(product: Product, now = new Date()) {
+function finalPrice(basePrice: number) {
+  return Math.round(basePrice * (1 + SERVICE_CHARGE_RATE) * 100) / 100;
+}
+
+function buildSize(width?: number | string, length?: number | string, height?: number | string) {
+  const w = String(width ?? "").trim();
+  const l = String(length ?? "").trim();
+  const h = String(height ?? "").trim();
+  const parts = [w && `W${w}`, l && `D${l}`, h && `H${h}`].filter(Boolean);
+  return parts.length ? parts.join(" × ") : undefined;
+}
+
+function normalizeImageUrl(url?: string) {
+  if (!url) return undefined;
+  const value = url.trim();
+  const id =
+    value.match(/[?&]id=([^&]+)/)?.[1] ||
+    value.match(/\/file\/d\/([^/]+)/)?.[1] ||
+    value.match(/\/open\?id=([^&]+)/)?.[1];
+  return id ? `https://drive.google.com/uc?export=view&id=${id}` : value;
+}
+
+function normalizeProduct(row: ApiProduct): Product | null {
+  const area = String(row.area || "").trim().toUpperCase();
+  const code = String(row.code || "").trim();
+  const category = String(row.category || "").trim();
+  const basePrice = parseNumber(row.price);
+  if (!code || !category || !["A", "B", "C", "D", "E"].includes(area) || basePrice <= 0) return null;
+
+  return {
+    code,
+    area: area as Product["area"],
+    category,
+    price: finalPrice(basePrice),
+    image: normalizeImageUrl(row.photoUrl || row.image),
+    size: buildSize(row.width, row.length, row.height),
+    createdAt: String(row.createdAt || ""),
+    status: String(row.status || "available").toLowerCase(),
+  };
+}
+
+function isWebVisible(product: Product, now = new Date()) {
+  if (product.status && product.status !== "available") return false;
   const created = new Date(product.createdAt).getTime();
+  if (!Number.isFinite(created)) return false;
   return now.getTime() - created >= WEBSITE_PUBLISH_DELAY_DAYS * 24 * 60 * 60 * 1000;
 }
 
-export function getVisibleProducts(now = new Date()) {
-  return products.filter((p) => isWebVisible(p, now));
+export async function getVisibleProducts(now = new Date()): Promise<Product[]> {
+  const apiUrl = process.env.PRODUCTS_API_URL;
+  if (!apiUrl) return fallbackProducts.filter((p) => isWebVisible(p, now));
+
+  try {
+    const response = await fetch(apiUrl, { next: { revalidate: 300 } });
+    if (!response.ok) throw new Error(`Products API returned ${response.status}`);
+    const payload = await response.json();
+    const rows: ApiProduct[] = Array.isArray(payload) ? payload : payload.products;
+    if (!Array.isArray(rows)) throw new Error("Products API payload is invalid");
+
+    return rows
+      .map(normalizeProduct)
+      .filter((p): p is Product => Boolean(p))
+      .filter((p) => isWebVisible(p, now));
+  } catch (error) {
+    console.error("Products API error", error);
+    return fallbackProducts.filter((p) => isWebVisible(p, now));
+  }
 }
 
 export function getGroupBySlug(slug: string | null | undefined) {
@@ -58,5 +116,10 @@ export function getProductGroup(product: Product) {
 }
 
 export function formatPeso(value: number) {
-  return `₱${value.toLocaleString("en-PH")}`;
+  return new Intl.NumberFormat("en-PH", {
+    style: "currency",
+    currency: "PHP",
+    minimumFractionDigits: Number.isInteger(value) ? 0 : 2,
+    maximumFractionDigits: 2,
+  }).format(value);
 }
