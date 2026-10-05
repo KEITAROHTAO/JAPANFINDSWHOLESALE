@@ -7,8 +7,8 @@ import { useOrderStore } from "./OrderStore";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { items } = useOrderStore();
-  const messenger = process.env.NEXT_PUBLIC_MESSENGER_URL || "#";
-  const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL || "#";
+  const messenger = process.env.NEXT_PUBLIC_MESSENGER_URL || "https://m.me/61576532876437";
+  const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://www.facebook.com/profile.php?id=61576532876437";
 
   return (
     <header className="siteHeader">
