@@ -1,19 +1,21 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { formatPeso, products } from "@/lib/catalog";
+import { formatPeso } from "@/lib/catalog";
 import { useOrderStore } from "@/components/OrderStore";
 
 export default function OrderListPage() {
   const { items, remove, setNote, clear } = useOrderStore();
   const [copied, setCopied] = useState(false);
   const messenger = process.env.NEXT_PUBLIC_MESSENGER_URL || "#";
-  const resolved = items.map((item) => ({ item, product: products.find((p) => p.code === item.code) })).filter((x) => x.product);
-  const total = resolved.reduce((sum, x) => sum + (x.product?.price || 0), 0);
+  const total = items.reduce((sum, item) => sum + item.price, 0);
+
   const message = useMemo(() => {
-    const lines = resolved.map(({ item, product }) => `${product!.code}  ${formatPeso(product!.price)}${item.note.trim() ? `\nNotes: ${item.note.trim()}` : ""}`);
+    const lines = items.map((item) =>
+      `${item.code}  ${formatPeso(item.price)}${item.note.trim() ? `\nNotes: ${item.note.trim()}` : ""}`
+    );
     return `I would like to buy:\n\n${lines.join("\n")}\n\nTotal: ${formatPeso(total)}`;
-  }, [resolved, total]);
+  }, [items, total]);
 
   async function sendToMessenger() {
     try {
@@ -27,18 +29,31 @@ export default function OrderListPage() {
     <main className="contentWrap pageTop orderPage">
       <p className="eyebrow">YOUR SELECTION</p>
       <h1>Order List</h1>
-      {resolved.length === 0 ? (
-        <div className="emptyState"><p>Your Order List is empty.</p><a className="primaryButton linkButton" href="/available-items">Browse available items</a></div>
+      {items.length === 0 ? (
+        <div className="emptyState">
+          <p>Your Order List is empty.</p>
+          <a className="primaryButton linkButton" href="/available-items">Browse available items</a>
+        </div>
       ) : (
         <>
           <div className="orderItems">
-            {resolved.map(({ item, product }) => (
-              <article className="orderItem" key={product!.code}>
-                <div className="orderThumb productImagePlaceholder"><span>{product!.category}</span></div>
+            {items.map((item) => (
+              <article className="orderItem" key={item.code}>
+                {item.image ? (
+                  <img className="orderThumb productImage" src={item.image} alt={`${item.code} ${item.category}`} />
+                ) : (
+                  <div className="orderThumb productImagePlaceholder"><span>{item.category}</span></div>
+                )}
                 <div className="orderBody">
-                  <div className="orderTopLine"><div><strong>{product!.category}</strong><span>{product!.code}</span></div><strong>{formatPeso(product!.price)}</strong></div>
-                  <label>Notes<textarea value={item.note} onChange={(e) => setNote(product!.code, e.target.value)} placeholder="Optional note for our staff" /></label>
-                  <button className="textButton" onClick={() => remove(product!.code)}>Remove</button>
+                  <div className="orderTopLine">
+                    <div><strong>{item.category}</strong><span>{item.code}</span></div>
+                    <strong>{formatPeso(item.price)}</strong>
+                  </div>
+                  <label>
+                    Notes
+                    <textarea value={item.note} onChange={(e) => setNote(item.code, e.target.value)} placeholder="Optional note for our staff" />
+                  </label>
+                  <button className="textButton" onClick={() => remove(item.code)}>Remove</button>
                 </div>
               </article>
             ))}
