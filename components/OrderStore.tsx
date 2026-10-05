@@ -1,11 +1,13 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { Product } from "@/lib/types";
 
-type OrderItem = { code: string; note: string };
+export type OrderItem = Product & { note: string };
+
 type OrderContextValue = {
   items: OrderItem[];
-  add: (code: string) => void;
+  add: (product: Product) => void;
   remove: (code: string) => void;
   setNote: (code: string, note: string) => void;
   clear: () => void;
@@ -31,7 +33,11 @@ export function OrderStore({ children }: { children: React.ReactNode }) {
 
   const value = useMemo<OrderContextValue>(() => ({
     items,
-    add: (code) => setItems((current) => current.some((x) => x.code === code) ? current : [...current, { code, note: "" }]),
+    add: (product) => setItems((current) =>
+      current.some((x) => x.code === product.code)
+        ? current
+        : [...current, { ...product, note: "" }]
+    ),
     remove: (code) => setItems((current) => current.filter((x) => x.code !== code)),
     setNote: (code, note) => setItems((current) => current.map((x) => x.code === code ? { ...x, note } : x)),
     clear: () => setItems([]),
