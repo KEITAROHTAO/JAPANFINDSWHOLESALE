@@ -109,3 +109,7 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
   .productGrid { gap: 10px; }
   .smallButton { font-size: 12px; }
 }
+
+.orderTextBlock { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.orderTextHeader { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.orderTextArea { width: 100%; min-height: 170px; resize: vertical; border: 1px solid var(--line); background: white; color: var(--black); padding: 12px; line-height: 1.5; }
