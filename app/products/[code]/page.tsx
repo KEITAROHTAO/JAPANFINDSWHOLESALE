@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import AddToOrderButton from "@/components/AddToOrderButton";
-import { formatPeso, getProductGroup, getVisibleProducts } from "@/lib/catalog";
+import { getProductGroup, getVisibleProducts } from "@/lib/catalog";\nimport { formatPeso } from "@/lib/format";
 
 export default async function ProductPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
