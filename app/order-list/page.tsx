@@ -62,6 +62,31 @@ export default function OrderListPage() {
             <div><span>Total</span><strong>{formatPeso(total)}</strong></div>
             <button className="primaryButton messengerButton" onClick={sendToMessenger}>Send Order via Messenger</button>
             <p className="finePrint">{copied ? "Order text copied. Paste it into Messenger." : "We’ll copy your order text and open Messenger. Our staff will confirm stock and send payment information."}</p>
+
+            <div className="orderTextBlock">
+              <div className="orderTextHeader">
+                <strong>Order Text</strong>
+                <button
+                  className="textButton"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(message);
+                      setCopied(true);
+                    } catch {}
+                  }}
+                >
+                  Copy Order Text
+                </button>
+              </div>
+              <textarea
+                className="orderTextArea"
+                value={message}
+                readOnly
+                onFocus={(e) => e.currentTarget.select()}
+              />
+              <p className="finePrint">You can copy this text manually and paste it into Messenger.</p>
+            </div>
+
             <button className="textButton" onClick={clear}>Clear Order List</button>
           </div>
         </>
