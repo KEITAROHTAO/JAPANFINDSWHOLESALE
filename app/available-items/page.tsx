@@ -4,7 +4,7 @@ import { getGroupBySlug, getVisibleProducts, WEB_GROUPS } from "@/lib/catalog";
 export default async function AvailableItems({ searchParams }: { searchParams: Promise<{ group?: string; category?: string }> }) {
   const params = await searchParams;
   const group = getGroupBySlug(params.group);
-  const all = getVisibleProducts();
+  const all = await getVisibleProducts();
   const groupProducts = group ? all.filter((p) => group.areas.includes(p.area)) : all;
   const categories = [...new Set(groupProducts.map((p) => p.category))].sort();
   const shown = params.category ? groupProducts.filter((p) => p.category === params.category) : groupProducts;
