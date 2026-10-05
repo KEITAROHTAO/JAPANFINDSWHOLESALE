@@ -57,7 +57,7 @@ function normalizeImageUrl(url?: string) {
     value.match(/[?&]id=([^&]+)/)?.[1] ||
     value.match(/\/file\/d\/([^/]+)/)?.[1] ||
     value.match(/\/open\?id=([^&]+)/)?.[1];
-  return id ? `/api/image?id=${encodeURIComponent(id)}` : value;
+  return id ? `https://drive.google.com/thumbnail?id=${id}&sz=w1000` : value;
 }
 
 function normalizeProduct(row: ApiProduct): Product | null {
