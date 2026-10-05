@@ -14,7 +14,7 @@ export default function Header() {
     <header className="siteHeader">
       <div className="headerInner">
         <Link href="/" className="logoLink" aria-label="JAPAN FINDS WHOLESALE home">
-          <img src="/api/image?asset=logo" alt="JAPAN FINDS WHOLESALE" />
+          <img src="/images/japan-finds-logo.jpg" alt="JAPAN FINDS WHOLESALE" />
         </Link>
         <div className="headerActions">
           <a className="textAction" href={messenger} target="_blank" rel="noreferrer">Messenger</a>
