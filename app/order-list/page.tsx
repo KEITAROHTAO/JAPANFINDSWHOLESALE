@@ -60,8 +60,6 @@ export default function OrderListPage() {
           </div>
           <div className="orderSummary">
             <div><span>Total</span><strong>{formatPeso(total)}</strong></div>
-            <button className="primaryButton messengerButton" onClick={sendToMessenger}>Send Order via Messenger</button>
-            <p className="finePrint">{copied ? "Order text copied. Paste it into Messenger." : "We’ll copy your order text and open Messenger. Our staff will confirm stock and send payment information."}</p>
 
             <div className="orderTextBlock">
               <div className="orderTextHeader">
@@ -86,6 +84,9 @@ export default function OrderListPage() {
               />
               <p className="finePrint">You can copy this text manually and paste it into Messenger.</p>
             </div>
+
+            <button className="primaryButton messengerButton" onClick={sendToMessenger}>Send Order via Messenger</button>
+            <p className="finePrint">{copied ? "Order text copied. Paste it into Messenger." : "We’ll copy your order text and open Messenger. Our staff will confirm stock and send payment information."}</p>
 
             <button className="textButton" onClick={clear}>Clear Order List</button>
           </div>
