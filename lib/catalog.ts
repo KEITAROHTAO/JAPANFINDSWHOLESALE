@@ -57,7 +57,7 @@ function normalizeImageUrl(url?: string) {
     value.match(/[?&]id=([^&]+)/)?.[1] ||
     value.match(/\/file\/d\/([^/]+)/)?.[1] ||
     value.match(/\/open\?id=([^&]+)/)?.[1];
-  return id ? `https://drive.google.com/uc?export=view&id=${id}` : value;
+  return id ? `/api/image?id=${encodeURIComponent(id)}` : value;
 }
 
 function normalizeProduct(row: ApiProduct): Product | null {
@@ -100,7 +100,8 @@ export async function getVisibleProducts(now = new Date()): Promise<Product[]> {
     return rows
       .map(normalizeProduct)
       .filter((p): p is Product => Boolean(p))
-      .filter((p) => isWebVisible(p, now));
+      .filter((p) => isWebVisible(p, now))
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
   } catch (error) {
     console.error("Products API error", error);
     return fallbackProducts.filter((p) => isWebVisible(p, now));
