@@ -35,7 +35,7 @@ button, textarea { font: inherit; }
 .eyebrow { color: var(--blue-dark); font-size: 12px; font-weight: 800; letter-spacing: .16em; margin: 0 0 8px; }
 h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.05; margin: 0 0 26px; }
 h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
-.introRow, .sectionHeadingRow { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.introRow, .sectionHeadingRow { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
 .homeGroup { padding: 38px 0 42px; border-top: 1px solid var(--line); }
 .sectionHeadingRow { margin-bottom: 18px; }
 .sectionHeadingRow a { color: var(--blue-dark); font-weight: 700; white-space: nowrap; }
