@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { OrderStore } from "@/components/OrderStore";
 
-const SITE_URL = "https://japanfindswholesale-taupe.vercel.app";
+const SITE_URL = "https://japanfinds.site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
