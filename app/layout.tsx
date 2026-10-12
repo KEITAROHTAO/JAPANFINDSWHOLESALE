@@ -22,9 +22,6 @@ export const metadata: Metadata = {
     "surplus furniture Philippines",
     "Japan surplus reseller",
   ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     url: SITE_URL,
