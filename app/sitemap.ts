@@ -12,6 +12,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/about`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/how-to-order`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/location`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/japan-surplus-philippines`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/japan-surplus-laguna`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${baseUrl}/japan-surplus-furniture`, changeFrequency: "weekly", priority: 0.9 },
   ];
 
   const groupPages: MetadataRoute.Sitemap = WEB_GROUPS.map((group) => ({
