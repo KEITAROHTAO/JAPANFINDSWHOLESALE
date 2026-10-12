@@ -113,3 +113,16 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
 .orderTextBlock { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
 .orderTextHeader { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
 .orderTextArea { width: 100%; min-height: 170px; resize: vertical; border: 1px solid var(--line); background: white; color: var(--black); padding: 12px; line-height: 1.5; }
+
+.seoIntro { padding-top: 54px; padding-bottom: 10px; }
+.seoIntro h2, .seoContent h2, .prosePage h2 { font-size: clamp(26px, 3vw, 36px); line-height: 1.15; margin: 0 0 16px; }
+.seoIntro p, .seoContent p, .prosePage p { max-width: 820px; font-size: 17px; line-height: 1.75; color: #39444b; }
+.seoLinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.seoLinks a { border-bottom: 1px solid var(--blue); color: var(--blue-dark); font-weight: 700; padding: 4px 0; }
+.seoContent { padding-top: 12px; padding-bottom: 80px; border-top: 1px solid var(--line); }
+.prosePage { max-width: 920px; }
+.prosePage h2 { margin-top: 38px; }
+@media (max-width: 860px) {
+  .seoIntro { padding-top: 38px; }
+  .seoIntro p, .seoContent p, .prosePage p { font-size: 16px; }
+}
