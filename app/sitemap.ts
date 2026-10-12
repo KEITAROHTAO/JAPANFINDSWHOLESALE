@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getVisibleProducts, WEB_GROUPS } from "@/lib/catalog";
 
-const baseUrl = "https://japanfindswholesale-taupe.vercel.app";
+const baseUrl = "https://japanfinds.site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getVisibleProducts();
