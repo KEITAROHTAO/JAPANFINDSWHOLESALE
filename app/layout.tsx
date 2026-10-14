@@ -31,7 +31,7 @@ export const metadata: Metadata = {
       "Direct supply of Japan surplus furniture, baby items and household goods in Biñan, Laguna, Philippines.",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/images/facebook-preview.jpg",
         width: 1200,
         height: 630,
         alt: "JAPAN FINDS WHOLESALE - Japan Surplus in Laguna, Philippines",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "JAPAN FINDS WHOLESALE | Japan Surplus in Laguna, Philippines",
     description:
       "Direct supply of Japan surplus furniture, baby items and wholesale goods in Biñan, Laguna, Philippines.",
-    images: ["/opengraph-image"],
+    images: ["/images/facebook-preview.jpg"],
   },
   robots: {
     index: true,
