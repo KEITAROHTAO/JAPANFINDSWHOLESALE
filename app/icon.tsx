@@ -13,21 +13,16 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#ffffff",
-          padding: "42px",
+          background: "#169bd5",
+          borderRadius: "96px",
+          fontFamily: "Arial, Helvetica, sans-serif",
+          fontWeight: 900,
+          fontSize: "230px",
+          letterSpacing: "-18px",
+          color: "#ffffff",
         }}
       >
-        <img
-          src="https://japanfinds.site/images/japan-finds-logo.jpg"
-          alt="JAPAN FINDS"
-          width="428"
-          height="428"
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "contain",
-          }}
-        />
+        JF
       </div>
     ),
     size
