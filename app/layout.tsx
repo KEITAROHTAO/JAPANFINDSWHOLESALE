@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   },
   description:
     "Japan surplus wholesale warehouse in Biñan, Laguna, Philippines. Shop Japanese furniture, baby items, household goods and wholesale items for resellers and personal use.",
+  icons: {
+    icon: [
+      { url: "/icon", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/icon",
+    apple: "/icon",
+  },
   keywords: [
     "Japan surplus Philippines",
     "Japan surplus Laguna",
@@ -65,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "JAPAN FINDS WHOLESALE",
     url: SITE_URL,
     image: `${SITE_URL}/images/warehouse.jpg`,
+    logo: `${SITE_URL}/icon`,
     description:
       "Japan surplus wholesale warehouse supplying furniture, baby items and household goods from Japan in Biñan, Laguna, Philippines.",
     address: {
