@@ -7,7 +7,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getVisibleProducts();
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: baseUrl, changeFrequency: "daily", priority: 1 },
+    { url: baseUrl, changeFrequency: "weekly", priority: 1 },
+    { url: `${baseUrl}/partners`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/contact`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/shop`, changeFrequency: "daily", priority: 1 },
     { url: `${baseUrl}/available-items`, changeFrequency: "daily", priority: 0.9 },
     { url: `${baseUrl}/about`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/how-to-order`, changeFrequency: "monthly", priority: 0.7 },
