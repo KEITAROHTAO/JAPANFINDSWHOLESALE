@@ -126,3 +126,59 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
   .seoIntro { padding-top: 38px; }
   .seoIntro p, .seoContent p, .prosePage p { font-size: 16px; }
 }
+
+
+/* Japanese supplier site */
+.jpSite { font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Arial, sans-serif; }
+.jpHero { position: relative; min-height: 620px; display: flex; align-items: flex-end; overflow: hidden; }
+.jpHeroImage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
+.jpHeroShade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,23,34,.78), rgba(7,23,34,.30)); }
+.jpHeroContent { position: relative; z-index: 1; width: min(1180px, calc(100% - 44px)); margin: 0 auto; padding: 96px 0 72px; color: white; }
+.jpKicker { margin: 0 0 16px; font-weight: 800; letter-spacing: .08em; }
+.jpHeroContent h1 { max-width: 800px; margin: 0 0 20px; font-size: clamp(40px, 6vw, 72px); line-height: 1.15; letter-spacing: -.03em; }
+.jpHeroContent > p:not(.jpKicker) { max-width: 680px; font-size: 18px; line-height: 1.9; }
+.jpHeroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.jpGhostButton { display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.75); padding: 14px 18px; font-weight: 800; color: white; }
+.jpGhostButton.dark { color: var(--black); border-color: var(--black); }
+.jpSection { padding-top: 72px; padding-bottom: 72px; }
+.jpSection > h2, .jpProse > h2 { margin-bottom: 24px; }
+.jpTwoCol, .jpThreeCol { display: grid; gap: 18px; margin-top: 30px; }
+.jpTwoCol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.jpThreeCol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.jpCard { border: 1px solid var(--line); padding: 30px; background: white; }
+.jpCardNo { display: inline-block; color: var(--blue-dark); font-weight: 900; margin-bottom: 28px; }
+.jpCard h3 { font-size: 22px; margin: 0 0 12px; }
+.jpCard p, .jpThreeCol p, .jpLead, .jpProse p, .jpNote { line-height: 1.9; }
+.jpBand { background: var(--soft); }
+.jpThreeCol > div { background: white; border-top: 4px solid var(--blue); padding: 26px; }
+.jpThreeCol strong { font-size: 20px; }
+.jpNote { margin-top: 24px; color: var(--muted); font-size: 14px; }
+.jpSteps { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 12px; }
+.jpSteps li { display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: start; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.jpSteps li > span { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--blue); color: white; font-weight: 900; }
+.jpSteps strong { font-size: 18px; }
+.jpSteps p { margin: 6px 0 0; line-height: 1.8; }
+.jpSteps.compact { margin-bottom: 50px; }
+.jpCta { border-top: 1px solid var(--line); }
+.jpCta.inline { margin-top: 64px; padding: 36px; background: var(--soft); border-top: 0; }
+.jpProse { max-width: 900px; }
+.jpLead { font-size: 18px; }
+.jpFaq details { border-top: 1px solid var(--line); padding: 18px 0; }
+.jpFaq details:last-child { border-bottom: 1px solid var(--line); }
+.jpFaq summary { cursor: pointer; font-weight: 800; }
+.jpContactNotice { margin: 28px 0; padding: 22px; background: #fff8df; border: 1px solid #efd989; }
+.jpContactNotice p { margin-bottom: 0; }
+.jpContactForm { display: grid; gap: 18px; margin: 28px 0 40px; }
+.jpContactForm label { display: grid; gap: 8px; font-weight: 800; }
+.jpContactForm input, .jpContactForm select, .jpContactForm textarea { width: 100%; border: 1px solid #cfd8dd; padding: 12px; background: white; }
+.textLink { color: var(--blue-dark); font-weight: 800; }
+
+@media (max-width: 760px) {
+  .jpHero { min-height: 560px; }
+  .jpHeroContent { padding: 70px 0 54px; }
+  .jpHeroContent > p:not(.jpKicker) { font-size: 16px; }
+  .jpTwoCol, .jpThreeCol { grid-template-columns: 1fr; }
+  .jpSection { padding-top: 52px; padding-bottom: 52px; }
+  .jpCard { padding: 22px; }
+  .headerActions .textAction { display: none; }
+}
