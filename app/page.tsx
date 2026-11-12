@@ -47,7 +47,7 @@ export default function SupplierHome() {
           </p>
           <div className="jpHeroActions">
             <a className="primaryButton" href="/contact">取引について相談する</a>
-            <a className="jpGhostButton" href="/available-items">現地の販売商品を見る</a>
+            <a className="jpGhostButton" href="/available-items">For Shopping in Philippines</a>
           </div>
         </div>
       </section>
