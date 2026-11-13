@@ -56,18 +56,35 @@ export default function SupplierHome() {
         <div className="contentWrap jpSection">
           <p className="eyebrow">WHY JAPAN FINDS</p>
           <h2>JAPAN FINDSが提供する3つの価値</h2>
-          <div className="jpThreeCol">
+          <p className="jpValueHeadline">現地に日本人がいる、<br />顔の見える海外販路。</p>
+          <div className="jpValueDivider" aria-hidden="true" />
+          <div className="jpThreeCol jpValueCards">
             <div>
-              <strong>1. 売上を改善するためのフィードバック</strong>
-              <p>コンテナごとに、何が売れたか、何が売れ残ったか、どの価格帯が適切だったかを把握できる。次回の商品の選定や値付けに活かせる。</p>
+              <span className="jpValueIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 3v18h18" /><path d="m7 16 4-4 3 2 6-7" /><path d="M16 7h4v4" />
+                </svg>
+              </span>
+              <strong>売り上げを改善するためのフィードバック</strong>
+              <p>コンテナごとに、何が売れたか、何が売れ残ったか、どの価格帯が適切だったかを写真とともにデータ共有いたします。次回の商品の選定やコンテナ構成に活かすことが可能です。</p>
             </div>
             <div>
-              <strong>2. リセラーだけに依存しない販売力</strong>
-              <p>リセラーへの卸売に加えて、個人顧客にも直接販売する。商品によっては、卸売だけの場合より高い価格で販売できる可能性がある。</p>
+              <span className="jpValueIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="9" cy="8" r="3" /><path d="M3 20v-2a6 6 0 0 1 12 0v2" /><path d="M17 5a3 3 0 0 1 0 6" /><path d="M18 14a5 5 0 0 1 3 5v1" />
+                </svg>
+              </span>
+              <strong>リセラーだけに依存しない販売力</strong>
+              <p>オークションとは異なり、リセラーへの卸売に加えて、個人顧客にも直接販売をしています。商品によってはリセラー価格より高い価格で販売が可能です。高く販売できることはコンテナ1つあたりの送金額に影響します。</p>
             </div>
             <div>
-              <strong>3. 日本人が現地で販売を理解し、日本語で説明できる</strong>
-              <p>現地の顧客ニーズや販売状況を、日本のサプライヤーと直接共有できる。言語だけでなく、課題を一緒に考えられることに価値がある。</p>
+              <span className="jpValueIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.9 8.9 0 0 1-4-.9L3 21l1.9-5.5a8.9 8.9 0 0 1-.9-4A8.5 8.5 0 0 1 12.5 3a8.5 8.5 0 0 1 8.5 8.5Z" /><path d="M8 11.5h9M8 15h6" />
+                </svg>
+              </span>
+              <strong>日本人が現地で販売を理解し、日本語で説明できる</strong>
+              <p>常駐の日本人が売り方の改善を常に行っています。現地の顧客ニーズや販売状況を、日本人が丁寧に確認してお伝えします。</p>
             </div>
           </div>
           <a className="outlineButton" href="/available-items">フィリピンでの販売商品を見る</a>
