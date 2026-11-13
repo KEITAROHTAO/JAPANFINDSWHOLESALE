@@ -40,7 +40,7 @@ export default function SupplierHome() {
         <div className="jpHeroShade" />
         <div className="jpHeroContent">
           <p className="jpKicker">日本の中古品事業者様へ</p>
-          <h1>日本の中古品に、<br />フィリピンという新しい販路を。</h1>
+          <h1>現地に日本人がいる、<br />顔の見える海外販路。</h1>
           <p>
             JAPAN FINDS WHOLESALEは、フィリピン・ラグナ州Biñanで
             日本から届く中古家具・雑貨などを販売する倉庫店舗です。
@@ -49,6 +49,28 @@ export default function SupplierHome() {
             <a className="primaryButton" href="/contact">取引について相談する</a>
             <a className="jpGhostButton" href="/available-items">For Shopping in Philippines</a>
           </div>
+        </div>
+      </section>
+
+      <section className="jpBand">
+        <div className="contentWrap jpSection">
+          <p className="eyebrow">WHY JAPAN FINDS</p>
+          <h2>JAPAN FINDSが提供する3つの価値</h2>
+          <div className="jpThreeCol">
+            <div>
+              <strong>1. 売上を改善するためのフィードバック</strong>
+              <p>コンテナごとに、何が売れたか、何が売れ残ったか、どの価格帯が適切だったかを把握できる。次回の商品の選定や値付けに活かせる。</p>
+            </div>
+            <div>
+              <strong>2. リセラーだけに依存しない販売力</strong>
+              <p>リセラーへの卸売に加えて、個人顧客にも直接販売する。商品によっては、卸売だけの場合より高い価格で販売できる可能性がある。</p>
+            </div>
+            <div>
+              <strong>3. 日本人が現地で販売を理解し、日本語で説明できる</strong>
+              <p>現地の顧客ニーズや販売状況を、日本のサプライヤーと直接共有できる。言語だけでなく、課題を一緒に考えられることに価値がある。</p>
+            </div>
+          </div>
+          <a className="outlineButton" href="/available-items">フィリピンでの販売商品を見る</a>
         </div>
       </section>
 
@@ -74,19 +96,6 @@ export default function SupplierHome() {
         <p className="jpNote">
           募集商品の具体的なカテゴリー・状態・数量は、ご相談内容を確認しながら個別にすり合わせます。
         </p>
-      </section>
-
-      <section className="jpBand">
-        <div className="contentWrap jpSection">
-          <p className="eyebrow">WHY JAPAN FINDS</p>
-          <h2>日本からフィリピンの販売現場へ</h2>
-          <div className="jpThreeCol">
-            <div><strong>現地販売拠点</strong><p>Biñan, Lagunaに倉庫店舗を構え、現地のお客様へ販売しています。</p></div>
-            <div><strong>リセラーと個人顧客</strong><p>現地のリセラーと個人のお客様の双方に、店舗・オンラインで商品を案内しています。</p></div>
-            <div><strong>販売状況を確認可能</strong><p>現在販売している商品の一部をWeb上で公開し、現地での販売実態をご確認いただけます。</p></div>
-          </div>
-          <a className="outlineButton" href="/available-items">フィリピンでの販売商品を見る</a>
-        </div>
       </section>
 
       <section className="contentWrap jpSection">
