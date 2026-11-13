@@ -51,6 +51,36 @@ export default function SupplierHome() {
         </div>
       </section>
 
+      <section className="contentWrap jpSection jpAboutSection" aria-labelledby="jpAboutHeading">
+        <div className="jpAboutGrid">
+          <div className="jpAboutCopy">
+            <p className="eyebrow">ABOUT US</p>
+            <h2 id="jpAboutHeading">私たちは、フィリピンの小さな商人たちが集まる中古品卸売倉庫です。</h2>
+            <p>
+              日本から届いた中古家具や雑貨を、現地のリセラーや個人のお客様に直接販売しています。
+              小さな商人たちのビジネスを支えながら、日本の中古品に新しい価値と販路を生み出しています。
+            </p>
+          </div>
+          <div className="jpAboutVideoWrap">
+            <video
+              className="jpAboutVideo"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/images/warehouse.jpg"
+              aria-label="フィリピンのJAPAN FINDS WHOLESALEでの販売風景"
+            >
+              <source
+                src="https://drive.google.com/uc?export=download&id=1NPYpKSN8meiemK_GEA6NhzOgj1eHapIs"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
+      </section>
+
       <section className="jpBand">
         <div className="contentWrap jpSection">
           <p className="eyebrow">WHY JAPAN FINDS</p>
