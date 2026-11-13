@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import SupplierContactForm from "@/components/SupplierContactForm";
+import { contactEnabled } from "@/lib/contact";
+
+export const dynamic = "force-dynamic";
 
 const email = "keitaro.tao@borderless-japan.com";
 
@@ -21,7 +24,7 @@ export default function ContactPage() {
         お問い合わせ先：<a className="textLink" href={`mailto:${email}`}>{email}</a>
       </p>
 
-      <SupplierContactForm />
+      <SupplierContactForm directSendEnabled={contactEnabled()} />
 
       <p><a className="textLink" href="/partners">募集内容・取引の流れを確認する →</a></p>
     </main>
