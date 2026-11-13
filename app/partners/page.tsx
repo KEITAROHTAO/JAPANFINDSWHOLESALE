@@ -64,13 +64,6 @@ export default function PartnersPage() {
         <li><span>4</span><div><strong>合意・取引開始</strong><p>双方で条件を確認したうえで開始します。</p></div></li>
       </ol>
 
-      <h2>よくあるご質問</h2>
-      <div className="jpFaq">
-        <details><summary>買取ですか、委託販売ですか？</summary><p>取引方式はWeb上で一律に限定していません。商品内容や状況を確認しながら個別にご相談します。</p></details>
-        <details><summary>具体的な精算条件を知りたいです。</summary><p>送金割合、費用負担、精算条件などは営業資料をもとに商談時にご説明します。</p></details>
-        <details><summary>どのような商品が対象ですか？</summary><p>募集カテゴリーや状態の基準は現在整理中です。まずは取扱商品についてお問い合わせください。</p></details>
-      </div>
-
       <div className="jpCta inline">
         <h2>取引について相談する</h2>
         <p>具体的な条件を決める前のご相談でも構いません。</p>
