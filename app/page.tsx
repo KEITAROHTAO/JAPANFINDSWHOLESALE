@@ -54,7 +54,7 @@ export default function SupplierHome() {
 
       <section className="contentWrap jpSection">
         <p className="eyebrow">PARTNERS</p>
-        <h2>新しい取引先を募集しています</h2>
+        <h2>輸出パートナー様を募集しています</h2>
         <div className="jpTwoCol">
           <article className="jpCard">
             <span className="jpCardNo">01</span>
