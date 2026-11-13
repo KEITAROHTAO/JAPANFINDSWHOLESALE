@@ -62,21 +62,15 @@ export default function SupplierHome() {
             </p>
           </div>
           <div className="jpAboutVideoWrap">
-            <video
+            <iframe
               className="jpAboutVideo"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              poster="/images/warehouse.jpg"
-              aria-label="フィリピンのJAPAN FINDS WHOLESALEでの販売風景"
-            >
-              <source
-                src="https://drive.google.com/uc?export=download&id=1NPYpKSN8meiemK_GEA6NhzOgj1eHapIs"
-                type="video/mp4"
-              />
-            </video>
+              src="https://drive.google.com/file/d/1NPYpKSN8meiemK_GEA6NhzOgj1eHapIs/preview"
+              title="JAPAN FINDS WHOLESALEの倉庫と販売風景"
+              loading="lazy"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
           </div>
         </div>
       </section>
