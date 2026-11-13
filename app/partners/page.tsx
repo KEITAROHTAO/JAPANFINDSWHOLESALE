@@ -40,6 +40,20 @@ export default function PartnersPage() {
         JAPAN FINDS WHOLESALEはフィリピン・ラグナ州Biñanに倉庫店舗を運営しています。
         現地のリセラーと個人のお客様に対して、店舗およびオンラインで販売しています。
       </p>
+      <figure style={{ margin: "24px 0" }}>
+        <img
+          src="/images/japan-finds-team.webp"
+          alt="JAPAN FINDS WHOLESALEの店舗前で撮影したチームの集合写真"
+          width={1600}
+          height={1600}
+          loading="lazy"
+          decoding="async"
+          style={{ display: "block", width: "100%", height: "auto", borderRadius: 12 }}
+        />
+        <figcaption style={{ marginTop: 10, color: "var(--muted)", fontSize: 14, lineHeight: 1.7 }}>
+          フィリピンの販売を支えるJAPAN FINDS WHOLESALEのチーム
+        </figcaption>
+      </figure>
       <p><a className="outlineButton" href="/available-items">現在の販売商品を見る</a></p>
 
       <h2>取引開始まで</h2>
