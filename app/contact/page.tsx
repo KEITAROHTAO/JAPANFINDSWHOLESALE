@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import SupplierContactForm from "@/components/SupplierContactForm";
+
+const email = "keitaro.tao@borderless-japan.com";
 
 export const metadata: Metadata = {
   title: "取引相談 | JAPAN FINDS WHOLESALE",
@@ -14,29 +17,11 @@ export default function ContactPage() {
       <p className="jpLead">
         中古品の新たな販売先をお探しの事業者様、遺品整理で引き取った再利用可能な品物の販路をお探しの事業者様は、ぜひご相談ください。
       </p>
+      <p>
+        お問い合わせ先：<a className="textLink" href={`mailto:${email}`}>{email}</a>
+      </p>
 
-      <div className="jpContactNotice">
-        <strong>お問い合わせフォームの送信先を設定中です。</strong>
-        <p>
-          ページ構成と入力項目は準備済みです。公開用の連絡先が確定後、送信機能を有効化します。
-        </p>
-      </div>
-
-      <form className="jpContactForm">
-        <label>会社名<input type="text" name="company" disabled /></label>
-        <label>ご担当者名<input type="text" name="name" disabled /></label>
-        <label>メールアドレス<input type="email" name="email" disabled /></label>
-        <label>事業内容
-          <select name="business" disabled>
-            <option>選択してください</option>
-            <option>中古品輸出</option>
-            <option>遺品整理</option>
-            <option>その他</option>
-          </select>
-        </label>
-        <label>取扱商品・ご相談内容<textarea name="message" rows={7} disabled /></label>
-        <button type="button" className="primaryButton" disabled>送信先設定後に利用できます</button>
-      </form>
+      <SupplierContactForm />
 
       <p><a className="textLink" href="/partners">募集内容・取引の流れを確認する →</a></p>
     </main>
