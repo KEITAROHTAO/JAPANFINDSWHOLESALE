@@ -132,7 +132,8 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
 .jpSite { font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Arial, sans-serif; }
 .jpHero { position: relative; min-height: 620px; display: flex; align-items: flex-end; overflow: hidden; }
 .jpHeroImage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 48%; }
-.jpHeroShade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,23,34,.78), rgba(7,23,34,.30)); }
+.jpHeroShade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,23,34,.58) 0%, rgba(7,23,34,.42) 35%, rgba(7,23,34,.12) 60%, rgba(7,23,34,0) 80%); }
+.jpHeroContent > p, .jpHeroContent h1 { text-shadow: 0 2px 8px rgba(0,0,0,.45); }
 .jpHeroContent { position: relative; z-index: 1; width: min(1180px, calc(100% - 44px)); margin: 0 auto; padding: 96px 0 72px; color: white; }
 .jpKicker { margin: 0 0 16px; font-weight: 800; letter-spacing: .08em; }
 .jpHeroContent h1 { max-width: 800px; margin: 0 0 20px; font-size: clamp(40px, 6vw, 72px); line-height: 1.15; letter-spacing: -.03em; }
@@ -175,6 +176,7 @@ h2 { font-size: clamp(24px, 3vw, 32px); margin: 0; }
 
 @media (max-width: 760px) {
   .jpHero { min-height: 560px; }
+  .jpHeroShade { background: linear-gradient(0deg, rgba(7,23,34,.62) 0%, rgba(7,23,34,.45) 55%, rgba(7,23,34,.08) 100%); }
   .jpHeroContent { padding: 70px 0 54px; }
   .jpHeroContent > p:not(.jpKicker) { font-size: 16px; }
   .jpTwoCol, .jpThreeCol { grid-template-columns: 1fr; }
