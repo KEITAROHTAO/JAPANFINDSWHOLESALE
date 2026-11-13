@@ -40,10 +40,9 @@ export default function SupplierHome() {
         <div className="jpHeroShade" />
         <div className="jpHeroContent">
           <p className="jpKicker">日本の中古品事業者様へ</p>
-          <h1>現地に日本人がいる、<br />顔の見える海外販路。</h1>
+          <h1>中古品の新たな販路を、<br />フィリピンに。</h1>
           <p>
-            JAPAN FINDS WHOLESALEは、フィリピン・ラグナ州Biñanで
-            日本から届く中古家具・雑貨などを販売する倉庫店舗です。
+            日本の中古品をフィリピンで直接販売する、新しい海外卸売のかたち。
           </p>
           <div className="jpHeroActions">
             <a className="primaryButton" href="/contact">取引について相談する</a>
@@ -55,8 +54,7 @@ export default function SupplierHome() {
       <section className="jpBand">
         <div className="contentWrap jpSection">
           <p className="eyebrow">WHY JAPAN FINDS</p>
-          <h2>JAPAN FINDSが提供する3つの価値</h2>
-          <p className="jpValueHeadline">現地に日本人がいる、<br />顔の見える海外販路。</p>
+          <p className="jpValueHeadline">現地に日本人がいる、<br />顔の見える海外販路</p>
           <div className="jpValueDivider" aria-hidden="true" />
           <div className="jpThreeCol jpValueCards">
             <div>
