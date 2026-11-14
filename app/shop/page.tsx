@@ -38,11 +38,6 @@ export default async function ShopHome() {
         <div className="heroText">
           <span>Direct Supply of</span>
           <h1>JAPAN<br />SURPLUS</h1>
-          <div className="shopActions heroActions">
-            <a className="primaryButton" href="/available-items">Browse Available Items</a>
-            <a className="outlineButton" href="/location">Visit Our Warehouse</a>
-            <a className="outlineButton" href="/how-to-order">Order Online</a>
-          </div>
         </div>
       </section>
 
@@ -57,8 +52,8 @@ export default async function ShopHome() {
             to your Order List, and send your order through Messenger for stock confirmation.
           </p>
           <div className="shopActions">
-            <a className="primaryButton" href="/japan-surplus-furniture">Shop Furniture</a>
-            <a className="outlineButton" href="/japan-surplus-cabinets">Shop Cabinets</a>
+            <a className="primaryButton" href="/available-items">Available Items</a>
+            <a className="outlineButton" href="/location">Visit Us</a>
             <a className="outlineButton" href={messenger} target="_blank" rel="noopener noreferrer">Message Us</a>
           </div>
           <p className="shopBuyerNote">Resellers and home buyers are welcome. Walk in with no registration fee, or send us item codes online and arrange Lalamove with our team.</p>
