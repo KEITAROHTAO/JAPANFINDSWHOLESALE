@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SHOP_FAQ } from "@/lib/shop-faq";
 import HomeGroup from "@/components/HomeGroup";
 import StoreDetails from "@/components/StoreDetails";
 import { getVisibleProducts, WEB_GROUPS } from "@/lib/catalog";
@@ -12,36 +13,16 @@ export const metadata: Metadata = {
 
 export default async function ShopHome() {
   const visible = await getVisibleProducts();
+  const messenger = process.env.NEXT_PUBLIC_MESSENGER_URL || "https://m.me/61576532876437";
 
   const faq = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Where can I buy Japan surplus in Laguna?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "JAPAN FINDS WHOLESALE operates a Japan surplus warehouse in Biñan, Laguna, with furniture, baby items, household goods and wholesale items sourced from Japan.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you sell Japan surplus furniture in the Philippines?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. JAPAN FINDS offers Japan surplus furniture in the Philippines, including tables, cabinets, chairs, beds and other furniture depending on current inventory.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can resellers buy wholesale Japan surplus items?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. JAPAN FINDS serves resellers and personal-use customers. Current available items can be viewed online and orders can be sent through Messenger.",
-        },
-      },
-    ],
+    mainEntity: SHOP_FAQ.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
   };
 
   return (
@@ -57,6 +38,11 @@ export default async function ShopHome() {
         <div className="heroText">
           <span>Direct Supply of</span>
           <h1>JAPAN<br />SURPLUS</h1>
+          <div className="shopActions heroActions">
+            <a className="primaryButton" href="/available-items">Browse Available Items</a>
+            <a className="outlineButton" href="/location">Visit Our Warehouse</a>
+            <a className="outlineButton" href="/how-to-order">Order Online</a>
+          </div>
         </div>
       </section>
 
@@ -70,6 +56,12 @@ export default async function ShopHome() {
             for resellers and personal-use customers. Browse current inventory online, add items
             to your Order List, and send your order through Messenger for stock confirmation.
           </p>
+          <div className="shopActions">
+            <a className="primaryButton" href="/japan-surplus-furniture">Shop Furniture</a>
+            <a className="outlineButton" href="/japan-surplus-cabinets">Shop Cabinets</a>
+            <a className="outlineButton" href={messenger} target="_blank" rel="noopener noreferrer">Message Us</a>
+          </div>
+          <p className="shopBuyerNote">Resellers and home buyers are welcome. Walk in with no registration fee, or send us item codes online and arrange Lalamove with our team.</p>
           <div className="seoLinks">
             <a href="/japan-surplus-philippines">Japan Surplus Philippines</a>
             <a href="/japan-surplus-laguna">Japan Surplus Laguna</a>
@@ -108,6 +100,18 @@ export default async function ShopHome() {
             slug={group.slug}
             products={visible.filter((p) => group.areas.includes(p.area))}
           />
+        ))}
+      </section>
+
+      <section className="contentWrap shopFaq" aria-labelledby="shopFaqHeading">
+        <p className="eyebrow">BEFORE YOU SHOP</p>
+        <h2 id="shopFaqHeading">Frequently Asked Questions</h2>
+        {SHOP_FAQ.map(({ question, answer, href, linkText }) => (
+          <details key={question}>
+            <summary>{question}</summary>
+            <p>{answer}</p>
+            {href ? <a className="textLink" href={href}>{linkText} →</a> : null}
+          </details>
         ))}
       </section>
 

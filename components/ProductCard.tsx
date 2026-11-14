@@ -19,6 +19,7 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
       </Link>
       <div className="productMeta">
+        <Link className="productName" href={`/products/${encodeURIComponent(product.code)}`}>{product.category}</Link>
         <strong>{formatPeso(product.price)}</strong>
         <span>{product.code}</span>
       </div>

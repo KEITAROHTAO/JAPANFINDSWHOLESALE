@@ -52,11 +52,19 @@ export default function Page() {
         <li>
           <h3>Wait for Our Staff to Confirm</h3>
           <p>
-            Our staff will confirm stock and send payment information. Ask our team about
-            collection arrangements before finalizing your purchase.
+            Our staff will confirm stock and send payment information. We can arrange Lalamove
+            with you. Confirm delivery details with our team before finalizing your purchase.
           </p>
         </li>
       </ol>
+
+      <h2>Already Have the Item Codes?</h2>
+      <p>
+        You can message us directly on Messenger with the item codes you want. Our team
+        will confirm availability and arrange Lalamove with you. The Order List is an
+        optional way to prepare your message.
+      </p>
+      <p><a className="outlineButton" href={messenger} target="_blank" rel="noopener noreferrer">Send Item Codes on Messenger</a></p>
 
       <h2>Prices and Availability</h2>
       <p>

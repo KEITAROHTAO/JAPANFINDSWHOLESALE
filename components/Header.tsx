@@ -50,6 +50,8 @@ export default function Header() {
             <>
               <Link href="/shop">Home</Link>
               <Link href="/available-items">Available Items</Link>
+              <Link href="/japan-surplus-furniture">Furniture</Link>
+              <Link href="/japan-surplus-cabinets">Cabinets</Link>
               <Link href="/about">About Us</Link>
               <Link href="/how-to-order">How to Order</Link>
               <Link href="/location">Location</Link>

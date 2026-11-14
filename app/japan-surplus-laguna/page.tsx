@@ -31,7 +31,8 @@ export default function Page() {
       </p>
       <div className="seoLinks">
         <a href="/location">Warehouse Location</a>
-        <a href="/available-items?group=furniture-items">Available Furniture</a>
+        <a href="/japan-surplus-furniture">Available Furniture</a>
+        <a href="/japan-surplus-cabinets">Available Cabinets</a>
         <a href="/japan-surplus-philippines">Japan Surplus Philippines</a>
       </div>
     </main>

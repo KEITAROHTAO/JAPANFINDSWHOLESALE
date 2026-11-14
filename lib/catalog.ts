@@ -2,7 +2,8 @@ import { Product, WebGroup } from "./types";
 
 export const WEB_GROUPS: WebGroup[] = [
   { slug: "baby-items", label: "Baby Items", areas: ["B"] },
-  { slug: "furniture-items", label: "Furniture Items", areas: ["C", "D"] },
+  { slug: "furniture-items", label: "Furniture", areas: ["C"] },
+  { slug: "cabinets", label: "Cabinets", areas: ["D"] },
   { slug: "wholesale-small-items", label: "Wholesale Small Items", areas: ["E"] },
   { slug: "wholesale-display-items", label: "Wholesale Display Items", areas: ["A"] },
 ];

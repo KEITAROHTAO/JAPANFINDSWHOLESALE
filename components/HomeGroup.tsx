@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Product } from "@/lib/types";
+import { getGroupHref } from "@/lib/catalog-seo";
 import ProductCard from "./ProductCard";
 
 export default function HomeGroup({ title, slug, products }: { title: string; slug: string; products: Product[] }) {
@@ -7,7 +8,7 @@ export default function HomeGroup({ title, slug, products }: { title: string; sl
     <section className="homeGroup">
       <div className="sectionHeadingRow">
         <h2>{title}</h2>
-        <Link href={`/available-items?group=${slug}`}>View more →</Link>
+        <Link href={getGroupHref(slug)}>View more →</Link>
       </div>
       <div className="horizontalProducts">
         {products.slice(0, 5).map((product) => <ProductCard key={product.code} product={product} />)}

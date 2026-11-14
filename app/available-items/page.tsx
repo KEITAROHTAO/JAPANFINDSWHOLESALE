@@ -1,32 +1,31 @@
-import ProductCard from "@/components/ProductCard";
-import { getGroupBySlug, getVisibleProducts, WEB_GROUPS } from "@/lib/catalog";
+import type { Metadata } from "next";
+import { permanentRedirect } from "next/navigation";
+import CatalogView from "@/components/CatalogView";
+import { getGroupBySlug, getVisibleProducts } from "@/lib/catalog";
+import { getCatalogHeading, getCatalogHref, getCatalogMetadata, type CatalogParams } from "@/lib/catalog-seo";
 
-export default async function AvailableItems({ searchParams }: { searchParams: Promise<{ group?: string; category?: string }> }) {
+type Props = { searchParams: Promise<CatalogParams> };
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const params = await searchParams;
+  const category = typeof params.category === "string" ? params.category : undefined;
+  return getCatalogMetadata(getGroupBySlug(params.group), category);
+}
+
+export default async function AvailableItems({ searchParams }: Props) {
   const params = await searchParams;
   const group = getGroupBySlug(params.group);
-  const all = await getVisibleProducts();
-  const groupProducts = group ? all.filter((p) => group.areas.includes(p.area)) : all;
-  const categories = [...new Set(groupProducts.map((p) => p.category))].sort();
-  const shown = params.category ? groupProducts.filter((p) => p.category === params.category) : groupProducts;
-
+  const category = typeof params.category === "string" ? params.category : undefined;
+  if (group && (group.slug === "furniture-items" || group.slug === "cabinets")) {
+    permanentRedirect(getCatalogHref(group, category));
+  }
+  const products = await getVisibleProducts();
   return (
     <main className="contentWrap pageTop">
       <p className="eyebrow">ONLINE CATALOG</p>
-      <h1>Available Items</h1>
-      <div className="chipRow groupChips">
-        <a className={!group ? "chip active" : "chip"} href="/available-items">All</a>
-        {WEB_GROUPS.map((g) => <a key={g.slug} className={group?.slug === g.slug ? "chip active" : "chip"} href={`/available-items?group=${g.slug}`}>{g.label}</a>)}
-      </div>
-      {group && categories.length > 0 && (
-        <div className="chipRow subChips">
-          <a className={!params.category ? "chip active" : "chip"} href={`/available-items?group=${group.slug}`}>All {group.label}</a>
-          {categories.map((category) => <a key={category} className={params.category === category ? "chip active" : "chip"} href={`/available-items?group=${group.slug}&category=${encodeURIComponent(category)}`}>{category}</a>)}
-        </div>
-      )}
-      <p className="itemCount">{shown.length} item{shown.length === 1 ? "" : "s"}</p>
-      <div className="productGrid">
-        {shown.map((product) => <ProductCard key={product.code} product={product} />)}
-      </div>
+      <h1>{getCatalogHeading(group, category)}</h1>
+      <p className="catalogIntro">Browse photos, prices and item codes. Resellers and walk-in buyers are welcome. <a href="/how-to-order">Order online through Messenger</a> or <a href="/location">visit our Biñan warehouse</a>.</p>
+      <CatalogView products={products} group={group} category={category} />
     </main>
   );
 }

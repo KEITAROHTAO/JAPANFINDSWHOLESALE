@@ -1,3 +1,4 @@
+import { getGroupHref } from "@/lib/catalog-seo";
 import type { MetadataRoute } from "next";
 import { getVisibleProducts, WEB_GROUPS } from "@/lib/catalog";
 
@@ -17,11 +18,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/location`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/japan-surplus-philippines`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${baseUrl}/japan-surplus-laguna`, changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/japan-surplus-furniture`, changeFrequency: "weekly", priority: 0.9 },
   ];
 
   const groupPages: MetadataRoute.Sitemap = WEB_GROUPS.map((group) => ({
-    url: `${baseUrl}/available-items?group=${group.slug}`,
+    url: `${baseUrl}${getGroupHref(group.slug)}`,
     changeFrequency: "daily",
     priority: 0.8,
   }));
