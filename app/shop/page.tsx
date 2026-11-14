@@ -60,21 +60,39 @@ export default async function ShopHome() {
         </div>
       </section>
 
-      <section className="contentWrap seoIntro">
-        <p className="eyebrow">JAPAN SURPLUS PHILIPPINES</p>
-        <h2>Japan Surplus Furniture & Wholesale Items in Laguna</h2>
-        <p>
-          JAPAN FINDS WHOLESALE is a Japan surplus warehouse in Biñan, Laguna, Philippines.
-          We offer Japanese surplus furniture, baby items, household goods and wholesale items
-          for resellers and personal-use customers. Browse current inventory online, add items
-          to your Order List, and send your order through Messenger for stock confirmation.
-        </p>
-        <div className="seoLinks">
-          <a href="/japan-surplus-philippines">Japan Surplus Philippines</a>
-          <a href="/japan-surplus-laguna">Japan Surplus Laguna</a>
-          <a href="/japan-surplus-furniture">Japan Surplus Furniture</a>
-          <a href="/location">Visit our Biñan, Laguna warehouse</a>
-          <a href="/how-to-order">How to Order</a>
+      <section className="contentWrap seoIntro shopIntroGrid">
+        <div className="shopIntroCopy">
+          <p className="eyebrow">JAPAN SURPLUS PHILIPPINES</p>
+          <h2>Japan Surplus Furniture & Wholesale Items in Laguna</h2>
+          <p>
+            JAPAN FINDS WHOLESALE is a Japan surplus warehouse in Biñan, Laguna, Philippines.
+            We offer Japanese surplus furniture, baby items, household goods and wholesale items
+            for resellers and personal-use customers. Browse current inventory online, add items
+            to your Order List, and send your order through Messenger for stock confirmation.
+          </p>
+          <div className="seoLinks">
+            <a href="/japan-surplus-philippines">Japan Surplus Philippines</a>
+            <a href="/japan-surplus-laguna">Japan Surplus Laguna</a>
+            <a href="/japan-surplus-furniture">Japan Surplus Furniture</a>
+            <a href="/location">Visit our Biñan, Laguna warehouse</a>
+            <a href="/how-to-order">How to Order</a>
+          </div>
+        </div>
+        <div className="shopIntroVideoWrap">
+          <video
+            className="shopIntroVideo"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/warehouse.jpg"
+            width={720}
+            height={1280}
+            aria-label="JAPAN FINDS WHOLESALE warehouse and shopping scenes (silent video)"
+          >
+            <source src="/videos/japan-finds-warehouse-muted.mp4" type="video/mp4" />
+          </video>
         </div>
       </section>
 
