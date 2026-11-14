@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import { OrderStore } from "@/components/OrderStore";
+import { STORE } from "@/lib/store";
 
 const SITE_URL = "https://japanfinds.site";
 
@@ -78,11 +79,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       "Japan surplus wholesale warehouse supplying furniture, baby items and household goods from Japan in Biñan, Laguna, Philippines.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Manila South Road, Limaco Compound, Platero",
+      streetAddress: STORE.streetAddress,
       addressLocality: "Biñan",
       addressRegion: "Laguna",
       postalCode: "4024",
       addressCountry: "PH",
+    },
+    telephone: STORE.phoneInternational,
+    email: STORE.email,
+    hasMap: STORE.mapsUrl,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"],
+      opens: "09:00",
+      closes: "18:00",
     },
     sameAs: ["https://www.facebook.com/profile.php?id=61576532876437"],
   };

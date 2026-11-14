@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomeGroup from "@/components/HomeGroup";
+import StoreDetails from "@/components/StoreDetails";
 import { getVisibleProducts, WEB_GROUPS } from "@/lib/catalog";
 
 export const metadata: Metadata = {
@@ -73,6 +74,7 @@ export default async function ShopHome() {
           <a href="/japan-surplus-laguna">Japan Surplus Laguna</a>
           <a href="/japan-surplus-furniture">Japan Surplus Furniture</a>
           <a href="/location">Visit our Biñan, Laguna warehouse</a>
+          <a href="/how-to-order">How to Order</a>
         </div>
       </section>
 
@@ -90,6 +92,10 @@ export default async function ShopHome() {
           />
         ))}
       </section>
+
+      <div className="contentWrap storeSection">
+        <StoreDetails />
+      </div>
 
       <section className="contentWrap seoContent">
         <p className="eyebrow">FOR RESELLERS & HOME BUYERS</p>
