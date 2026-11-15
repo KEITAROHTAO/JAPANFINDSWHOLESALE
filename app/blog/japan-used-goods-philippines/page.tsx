@@ -45,7 +45,7 @@ export default function JapanUsedGoodsPhilippinesArticle() {
 
       <h2 style={section}>3. コンテナで輸入した中古品はどのように販売されるのか？</h2>
       <p style={prose}>JAPAN FINDSでは、日本から中古品をコンテナ単位で仕入れています。</p>
-      <figure style={{ margin: "22px auto 30px", maxWidth: 640 }}><video controls playsInline preload="metadata" aria-label="日本から輸入した中古品コンテナの荷下ろし風景" style={{ display: "block", width: "100%", height: "auto", borderRadius: 12, background: "#111" }}><source src="/videos/japan-finds-container-unloading.mp4" type="video/mp4" />お使いのブラウザでは動画を再生できません。</video><figcaption style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>日本から届いたコンテナの荷下ろし風景</figcaption></figure>
+      <figure style={{ margin: "22px auto 30px", maxWidth: 640 }}><video controls muted playsInline preload="metadata" aria-label="日本から輸入した中古品コンテナの荷下ろし風景" style={{ display: "block", width: "100%", height: "auto", borderRadius: 12, background: "#111" }}><source src="/videos/japan-finds-container-unloading.mp4" type="video/mp4" />お使いのブラウザでは動画を再生できません。</video><figcaption style={{ marginTop: 8, fontSize: 13, color: "var(--muted)" }}>日本から届いたコンテナの荷下ろし風景</figcaption></figure>
       <p style={prose}>コンテナがフィリピンに到着した後、倉庫で商品の荷下ろしや販売準備を行います。</p>
       <p style={prose}>商品は家具、生活雑貨、衣類などのカテゴリーごとに整理され、店頭に並びます。</p>
       <p style={prose}>また、定期的に新商品を販売する「New Arrival」を開催しています。</p>
