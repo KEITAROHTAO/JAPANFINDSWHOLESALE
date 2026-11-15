@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   title: articleTitle,
   description: "フィリピンで日本の中古品は実際に売れているのか？JAPAN FINDS WHOLESALEが現地の倉庫、購入者、コンテナ輸入、在庫管理の実例を紹介します。",
   alternates: { canonical: "/blog/japan-used-goods-philippines" },
-  openGraph: { title: articleTitle, description: "フィリピン・ビニャンの現地販売事業者が、日本の中古家具や生活雑貨の販売現場を紹介します。", type: "article", images: ["/images/warehouse.jpg"] },
+  openGraph: { title: articleTitle, description: "フィリピン・ビニャンの現地販売事業者が、日本の中古家具や生活雑貨の販売現場を紹介します。", type: "article", images: ["/images/japan-finds-warehouse-article.jpg"] },
 };
 const section = { marginTop: 42, marginBottom: 16 } as const;
 const prose = { lineHeight: 1.95, fontSize: 17 } as const;
 
 export default function JapanUsedGoodsPhilippinesArticle() {
-  const structuredData = { "@context": "https://schema.org", "@type": "BlogPosting", headline: articleTitle, inLanguage: "ja", author: { "@type": "Organization", name: "JAPAN FINDS WHOLESALE" }, publisher: { "@type": "Organization", name: "JAPAN FINDS WHOLESALE" }, mainEntityOfPage: "https://japanfinds.site/blog/japan-used-goods-philippines", image: "https://japanfinds.site/images/warehouse.jpg" };
+  const structuredData = { "@context": "https://schema.org", "@type": "BlogPosting", headline: articleTitle, inLanguage: "ja", author: { "@type": "Organization", name: "JAPAN FINDS WHOLESALE" }, publisher: { "@type": "Organization", name: "JAPAN FINDS WHOLESALE" }, mainEntityOfPage: "https://japanfinds.site/blog/japan-used-goods-philippines", image: "https://japanfinds.site/images/japan-finds-warehouse-article.jpg" };
   return (
     <main lang="ja" className="jpSite contentWrap pageTop prosePage jpProse" style={{ maxWidth: 900 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
@@ -23,7 +23,7 @@ export default function JapanUsedGoodsPhilippinesArticle() {
       <p style={prose}>しかし、実際に海外でどのような商品が売れているのか、どのような人が購入しているのかは、日本からではなかなか見えない部分もあります。</p>
       <p style={prose}>私たちJAPAN FINDS WHOLESALEは、日本から中古家具や生活雑貨などをコンテナで輸入し、フィリピンのラグナ州ビニャンにある倉庫で販売しています。</p>
       <p style={prose}>この記事では、フィリピンの販売現場で実際に扱っている商品や、購入者の様子を紹介します。</p>
-      <figure style={{ margin: "26px 0 36px" }}><img src="/images/warehouse.jpg" alt="フィリピン・ラグナ州ビニャンのJAPAN FINDS WHOLESALE倉庫" style={{ display: "block", width: "100%", height: "auto", borderRadius: 12 }} /><figcaption style={{ fontSize: 13, color: "var(--muted)", marginTop: 9 }}>JAPAN FINDS WHOLESALEの倉庫</figcaption></figure>
+      <figure style={{ margin: "26px 0 36px" }}><img src="/images/japan-finds-warehouse-article.jpg" alt="フィリピン・ラグナ州ビニャンのJAPAN FINDS WHOLESALE倉庫" style={{ display: "block", width: "100%", height: "auto", borderRadius: 12 }} /><figcaption style={{ fontSize: 13, color: "var(--muted)", marginTop: 9 }}>JAPAN FINDS WHOLESALEの倉庫</figcaption></figure>
 
       <h2 style={section}>1. フィリピンで販売される日本の中古品</h2>
       <p style={prose}>フィリピンでは、日本から輸入された中古品が「Japan Surplus」と呼ばれ、販売されています。</p>
