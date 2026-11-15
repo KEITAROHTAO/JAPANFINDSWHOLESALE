@@ -11,6 +11,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: baseUrl, changeFrequency: "weekly", priority: 1 },
     { url: `${baseUrl}/partners`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/contact`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/blog`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/blog/japan-used-goods-philippines`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/shop`, changeFrequency: "daily", priority: 1 },
     { url: `${baseUrl}/available-items`, changeFrequency: "daily", priority: 0.9 },
     { url: `${baseUrl}/about`, changeFrequency: "monthly", priority: 0.7 },
