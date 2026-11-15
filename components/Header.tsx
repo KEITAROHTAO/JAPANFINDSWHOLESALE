@@ -24,7 +24,7 @@ export default function Header() {
         <div className="headerActions">
           {isJapanese ? (
             <>
-              <Link className="textAction" href="/blog">ブログ</Link>
+              <Link className="textAction" href="/">事業紹介</Link>
               <Link className="orderBadge" href="/contact">取引相談</Link>
             </>
           ) : (
@@ -42,7 +42,7 @@ export default function Header() {
             <>
               <Link href="/">事業紹介</Link>
               <Link href="/partners">取引パートナー募集</Link>
-              <Link href="/blog">ブログ・現地販売レポート</Link>
+              <Link href="/blog">現地販売レポート</Link>
               <Link href="/contact">取引相談</Link>
               <Link href="/available-items">フィリピンでの販売商品</Link>
               <Link href="/shop">Philippines Shop (English)</Link>
