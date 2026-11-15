@@ -66,7 +66,6 @@ export default function JapanUsedGoodsPhilippinesArticle() {
       <p style={prose}>海外に中古品を輸出する際、日本側からは現地の販売状況が見えにくいことがあります。</p>
       <p style={prose}>しかし、実際に現地で販売していると、どの商品が売れたのか、どのくらいの期間で販売されたのか、どのような商品が在庫として残っているのかを把握できます。</p>
       <p style={prose}>JAPAN FINDSでは、商品ごとにコードを付けて管理し、販売履歴を記録しています。</p>
-      <figure style={{ margin: "22px 0 28px" }}><img src="/images/japan-finds-products-data.webp" alt="JAPAN FINDS WHOLESALEの商品管理スプレッドシート。商品コード、カテゴリー、価格、在庫状況などを管理" style={{ display: "block", width: "100%", height: "auto", borderRadius: 10, border: "1px solid #e7ecef" }} loading="lazy" /><figcaption style={{ fontSize: 13, color: "var(--muted)", marginTop: 8 }}>JAPAN FINDSの商品管理データの一例</figcaption></figure>
       <p style={prose}>これにより、カテゴリー別の販売状況や商品ごとの売れ行きを確認できます。</p>
       <p style={prose}>こうした現地での販売経験とデータは、日本からどのような商品を仕入れるべきかを考えるうえでも役立ちます。</p>
       <p style={prose}>私たちは、日本から商品を輸入するだけでなく、<strong>フィリピンの購入者に販売するまでの過程を自社で経験していること</strong>を大切にしています。</p>
