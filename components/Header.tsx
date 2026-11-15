@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useOrderStore } from "./OrderStore";
 
-const JP_PATHS = new Set(["/", "/partners", "/contact"]);
+const JP_PATHS = new Set(["/", "/partners", "/contact", "/blog"]);
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function Header() {
   const { items } = useOrderStore();
   const messenger = process.env.NEXT_PUBLIC_MESSENGER_URL || "https://m.me/61576532876437";
   const facebook = process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://www.facebook.com/profile.php?id=61576532876437";
-  const isJapanese = JP_PATHS.has(pathname);
+  const isJapanese = JP_PATHS.has(pathname) || pathname.startsWith("/blog/");
 
   return (
     <header className="siteHeader">
@@ -24,7 +24,7 @@ export default function Header() {
         <div className="headerActions">
           {isJapanese ? (
             <>
-              <Link className="textAction" href="/available-items">販売商品を見る</Link>
+              <Link className="textAction" href="/blog">ブログ</Link>
               <Link className="orderBadge" href="/contact">取引相談</Link>
             </>
           ) : (
@@ -42,6 +42,7 @@ export default function Header() {
             <>
               <Link href="/">事業紹介</Link>
               <Link href="/partners">取引パートナー募集</Link>
+              <Link href="/blog">ブログ・現地販売レポート</Link>
               <Link href="/contact">取引相談</Link>
               <Link href="/available-items">フィリピンでの販売商品</Link>
               <Link href="/shop">Philippines Shop (English)</Link>
