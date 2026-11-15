@@ -49,6 +49,7 @@ export default function JapanUsedGoodsPhilippinesArticle() {
       <p style={prose}>コンテナがフィリピンに到着した後、倉庫で商品の荷下ろしや販売準備を行います。</p>
       <p style={prose}>商品は家具、生活雑貨、衣類などのカテゴリーごとに整理され、店頭に並びます。</p>
       <p style={prose}>また、定期的に新商品を販売する「New Arrival」を開催しています。</p>
+      <figure style={{ margin: "22px auto 30px", maxWidth: 640 }}><video controls muted playsInline preload="metadata" aria-label="New Arrival当日にバイヤーが倉庫に集まる様子（無音）" style={{ display: "block", width: "100%", height: "auto", borderRadius: 12, background: "#111" }}><source src="/videos/japan-finds-new-arrival.mp4" type="video/mp4" />お使いのブラウザでは動画を再生できません。</video><figcaption style={{ marginTop: 8, fontSize: 14, lineHeight: 1.7, color: "var(--muted)" }}>「New Arrival」の日には多くのバイヤーが集まり列ができるほどの人気です</figcaption></figure>
       <p style={prose}>New Arrivalでは、新たに入荷した商品を目当てにお客様が倉庫を訪れます。</p>
       <p style={prose}>このほか、FacebookやWebサイトを通じて商品写真を公開し、オンラインでの注文にも対応しています。</p>
       <p style={prose}><strong>日本から輸入した商品を、フィリピン現地で直接販売できることが私たちの事業の特徴です。</strong></p>
